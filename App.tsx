@@ -119,7 +119,8 @@ function useScrollProgressBySections(sectionIds: string[]) {
       } else {
         // last section: progress depends on how far into it until bottom
         const start = tops[last];
-        const docBottom = document.documentElement.scrollHeight - window.innerHeight;
+        const docBottom =
+          document.documentElement.scrollHeight - window.innerHeight;
         const span = Math.max(1, docBottom - start);
         pInside = (window.scrollY - start) / span;
         pInside = Math.min(1, Math.max(0, pInside));
@@ -358,7 +359,7 @@ const Hero = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-        src={`${import.meta.env.BASE_URL}images/hero.png`}
+          src={`${import.meta.env.BASE_URL}images/hero.png`}
           alt="Athlete Training"
           className="w-full h-full object-cover opacity-20 grayscale"
         />
@@ -414,7 +415,7 @@ const Hero = () => {
         >
           <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] max-h-[500px]">
             <img
-              src={ASSET("../public/test.jpg")}
+              src={`${import.meta.env.BASE_URL}images/test.jpg`}
               alt="Elite Male Fitness"
               className="w-full h-full object-cover object-top"
             />
@@ -442,7 +443,7 @@ const About = () => {
           >
             <div className="aspect-[1/1] rounded-3xl overflow-hidden border border-white/5 relative group max-w-lg mx-auto lg:mx-0">
               <img
-                src={ASSET("../public/coach.jpg")}
+                src={`${import.meta.env.BASE_URL}images/coach.jpg`}
                 alt="Head Coach Marcus"
                 className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
               />
@@ -522,9 +523,21 @@ const About = () => {
 
 const Transformations = () => {
   const cases = [
-    { name: "Julian M.", after: ASSET("../public/1-proof.jpg"), result: "12% Body Fat Lost" },
-    { name: "Mark K.", after: ASSET("../public/2-proof.jpg"), result: "8kg Muscle Gained" },
-    { name: "Steve G.", after: ASSET("../public/3-proof.jpg"), result: "6 Months Recomp" },
+    {
+      name: "Julian M.",
+      after: `${import.meta.env.BASE_URL}images/1-proof.jpg`,
+      result: "12% Body Fat Lost",
+    },
+    {
+      name: "Mark K.",
+      after: `${import.meta.env.BASE_URL}images/2-proof.jpg`,
+      result: "8kg Muscle Gained",
+    },
+    {
+      name: "Steve G.",
+      after: `${import.meta.env.BASE_URL}images/3-proof.jpg`,
+      result: "6 Months Recomp",
+    },
   ];
 
   return (
@@ -753,7 +766,9 @@ const Testimonials = () => {
                   alt={rev.name}
                 />
                 <div>
-                  <p className="font-black text-lg tracking-tight">{rev.name}</p>
+                  <p className="font-black text-lg tracking-tight">
+                    {rev.name}
+                  </p>
                   <p className="text-[10px] text-emerald-500 uppercase font-black tracking-widest">
                     {rev.role}
                   </p>
@@ -778,10 +793,14 @@ const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20">
           <div>
-            <SectionTitle subtitle="Strategy" title="Join The Elite" centered={false} />
+            <SectionTitle
+              subtitle="Strategy"
+              title="Join The Elite"
+              centered={false}
+            />
             <p className="text-gray-400 mb-12 max-w-md text-lg leading-relaxed font-medium">
-              Ready to leave mediocrity behind? Apply for a strategy session to see
-              if you're a fit for the 2025 roster.
+              Ready to leave mediocrity behind? Apply for a strategy session to
+              see if you're a fit for the 2025 roster.
             </p>
 
             <div className="space-y-6 mb-12">
@@ -793,7 +812,9 @@ const Contact = () => {
                   <p className="text-[10px] text-emerald-500 uppercase font-black tracking-widest mb-1">
                     Direct Strategy
                   </p>
-                  <p className="font-black text-xl tracking-tight">Schedule Your Call</p>
+                  <p className="font-black text-xl tracking-tight">
+                    Schedule Your Call
+                  </p>
                 </div>
               </div>
             </div>
@@ -1009,7 +1030,14 @@ function ScrollProgressToTop({
 const App = () => {
   // IMPORTANT: order matters for progress.
   // progress starts from hero=0 → contact=1
-  const SECTION_IDS = ["home", "about", "results", "programs", "testimonials", "contact"];
+  const SECTION_IDS = [
+    "home",
+    "about",
+    "results",
+    "programs",
+    "testimonials",
+    "contact",
+  ];
   const { progress, currentIndex } = useScrollProgressBySections(SECTION_IDS);
 
   // show button only after reaching section 2 (index 1 => about)
