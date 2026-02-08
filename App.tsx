@@ -359,7 +359,7 @@ const Hero = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero.png`}
+          src="/images/hero.png"
           alt="Athlete Training"
           className="w-full h-full object-cover opacity-20 grayscale"
         />
@@ -415,7 +415,7 @@ const Hero = () => {
         >
           <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] max-h-[500px]">
             <img
-              src={`${import.meta.env.BASE_URL}images/test.jpg`}
+              src="/images/test.jpg"
               alt="Elite Male Fitness"
               className="w-full h-full object-cover object-top"
             />
@@ -443,7 +443,7 @@ const About = () => {
           >
             <div className="aspect-[1/1] rounded-3xl overflow-hidden border border-white/5 relative group max-w-lg mx-auto lg:mx-0">
               <img
-                src={`${import.meta.env.BASE_URL}images/coach.jpg`}
+                src="/images/coach.jpg"
                 alt="Head Coach Marcus"
                 className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
               />
@@ -720,19 +720,19 @@ const Testimonials = () => {
       name: "Damian V.",
       role: "CEO",
       text: "Marcus changed my perspective on efficiency. I'm stronger at 40 than I was at 20.",
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      img: "/images/1-proof.jpg",
     },
     {
       name: "Brian L.",
       role: "Manager",
       text: "The app and the feedback loops are flawless. Results are inevitable with this system.",
-      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+      img: "/images/2-proof.jpg",
     },
     {
       name: "Ricardo S.",
       role: "Founder",
       text: "Best coaching experience of my life. Zero fluff, just high-performance results.",
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+      img: "/images/3-proof.jpg",
     },
   ];
 
